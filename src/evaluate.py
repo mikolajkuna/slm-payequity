@@ -18,10 +18,10 @@ from peft import PeftModel
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
 
-BASE_MODEL      = "microsoft/Phi-3.5-mini-instruct"
-ADAPTER_PATH    = "./output_peft/phi-3.5-mini/lora_adapter"
-TEST_DATA_PATH  = "test_data.jsonl"
-OUTPUT_DIR      = "./eval_results/phi-3.5-mini"
+BASE_MODEL      = "microsoft/Phi-3.5-mini-instruct"  # change per model
+ADAPTER_PATH    = "./output_peft/<model_short_name>/lora_adapter"  # change per model
+TEST_DATA_PATH  = "data/raw/test.jsonl"
+OUTPUT_DIR      = "./eval_results/<model_short_name>"  # change per model
 COMPARE_ZEROSHOT = True
 MAX_NEW_TOKENS  = 1024
 
@@ -35,7 +35,7 @@ def load_model(use_adapter=True):
         bnb_4bit_use_double_quant=True,
     )
 
-    tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL)
+    tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, trust_remote_code=True)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"
@@ -44,6 +44,7 @@ def load_model(use_adapter=True):
         BASE_MODEL,
         quantization_config=bnb_config,
         device_map="auto",
+        trust_remote_code=True,
         dtype=torch.bfloat16,
         attn_implementation="eager",
     )
@@ -81,6 +82,7 @@ def generate(model, tokenizer, instruction, input_text=""):
             do_sample=False,
             temperature=1.0,
             pad_token_id=tokenizer.eos_token_id,
+            use_cache=False,
         )
     generated = outputs[0][inputs["input_ids"].shape[1]:]
     return tokenizer.decode(generated, skip_special_tokens=True).strip()
