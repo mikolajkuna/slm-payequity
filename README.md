@@ -8,7 +8,7 @@ Three open-weight models are evaluated:
 - [Mistral 7B Instruct v0.3](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3)
 - [Phi-3.5 Mini Instruct](https://huggingface.co/microsoft/Phi-3.5-mini-instruct)
 
-Fine-tuning uses **QLoRA** (r=16, α=16, dropout=0.1, 3 epochs) on a synthetic instruction dataset.
+Fine-tuning uses **QLoRA** (r=16, α=32, dropout=0.1, 3 epochs) on a synthetic instruction dataset.
 Each model is benchmarked against a **zero-shot baseline** and a **RAG baseline** (k=3 few-shot retrieval without fine-tuning) across three compliance task categories (TC1–TC3).
 
 This repository accompanies the paper:
@@ -65,7 +65,7 @@ compensation dataset (n=2,000) as the statistical backend.
 |---|---|---|
 | Method | QLoRA (NF4, double quant) | QLoRA (NF4) |
 | LoRA rank (r) | 16 | 16 |
-| LoRA alpha (α) | 16 | 16 |
+| LoRA alpha (α) | 32 | 32 |
 | LoRA dropout | 0.1 | 0.1 |
 | Target modules | all linear layers | all linear layers |
 | Epochs | 3 | 3 |
