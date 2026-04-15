@@ -18,6 +18,9 @@ unsloth_compiled_cache/
 
 # Model outputs (large binary files)
 output_peft/
+*.safetensors
+*.bin
+*.pt
 
 # HuggingFace cache
 .cache/
