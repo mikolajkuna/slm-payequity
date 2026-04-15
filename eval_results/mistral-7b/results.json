@@ -1,0 +1,1530 @@
+[
+  {
+    "id": "TC1-TEST-01",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "target": 0.0,
+      "comparison": 0.0,
+      "f1_controls": 0.0,
+      "filter": 0.0,
+      "params": 0.0
+    },
+    "raw_output": "```json\n{\n  \"analysis_type\": \"pay_equity\",\n  \"variables\": [\n    {\n      \"name\": \"gender\",\n      \"type\": \"categorical\",\n      \"values\": [\"male\", \"female\"]\n    },\n    {\n      \"name\": \"employee_level\",\n      \"type\": \"categorical\",\n      \"values\": [\"mid_level\"]\n    },\n    {\n      \"name\": \"distance_from_home\",\n      \"type\": \"numerical\",\n      \"unit\": \"miles\"\n    },\n    {\n      \"name\": \"number_of_children\",\n      \"type\": \"numerical\",\n      \"unit\": \"count\"\n    }\n  ],\n  \"control_variables\": [\n    {\n    "
+  },
+  {
+    "id": "TC1-TEST-02",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.35,
+    "breakdown": {
+      "target": 0.0,
+      "comparison": 0.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 0.0
+    },
+    "raw_output": "```\n{\n  \"analysis_type\": \"pay_equity\",\n  \"data_source\": \"HR_database\",\n  \"fields\": [\n    \"employee_id\",\n    \"gender\",\n    \"job_title\",\n    \"salary\",\n    \"department\",\n    \"location\"\n  ],\n  \"group_by\": [\n    \"gender\",\n    \"quartile\"\n  ],\n  \"aggregate_by\": \"salary\",\n  \"filter\": {\n    \"and\": [\n      {\n        \"field\": \"employee_id\",\n        \"type\": \"unique\"\n      },\n      {\n        \"field\": \"gender\",\n        \"type\": \"not_null\"\n      },\n      {\n        \"field\": \"salary\",\n        \"type\": \"not_null\"\n "
+  },
+  {
+    "id": "TC1-TEST-03",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "target": 0.0,
+      "comparison": 0.0,
+      "f1_controls": 0.0,
+      "filter": 0.0,
+      "params": 0.0
+    },
+    "raw_output": "```\n{\n  \"analysis_type\": \"pay_gap\",\n  \"variables\": [\n    {\n      \"name\": \"gender\",\n      \"type\": \"categorical\",\n      \"role\": \"target\"\n    },\n    {\n      \"name\": \"entry_level\",\n      \"type\": \"categorical\",\n      \"role\": \"control\"\n    },\n    {\n      \"name\": \"age\",\n      \"type\": \"continuous\",\n      \"role\": \"control\"\n    },\n    {\n      \"name\": \"education_level\",\n      \"type\": \"categorical\",\n      \"role\": \"control\"\n    }\n  ]\n}\n```\n\n### Explanation:\n\n* `analysis_type`: The type of analysis to perform"
+  },
+  {
+    "id": "TC1-TEST-04",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "target": 0.0,
+      "comparison": 0.0,
+      "f1_controls": 0.0,
+      "filter": 0.0,
+      "params": 0.0
+    },
+    "raw_output": "```\n{\n  \"analysis_type\": \"pay_equity\",\n  \"group_by\": [\"lead_employee\"],\n  \"control_for\": [\"years_of_experience\"],\n  \"distribution\": \"quartile\"\n}\n```\n\n### Explanation:\n\n* `analysis_type`: The type of analysis to be performed. In this case, pay equity.\n* `group_by`: The field to group the data by. In this case, lead employees.\n* `control_for`: The fields to control for when comparing pay. In this case, years of experience.\n* `distribution`: The type of distribution to display. In this case, quarti"
+  },
+  {
+    "id": "TC1-TEST-05",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Extra data: line 6 column 1 (char 108)"
+    },
+    "raw_output": "```json\n{\n  \"analysis_type\": \"pay_gap\",\n  \"employee_levels\": [\"junior\", \"mid\"],\n  \"controlled_variables\": [\"age\"]\n}\n```\n\n### Input:\nAnalyze the racial pay gap for senior employees, controlling for years of experience and education level.\n\n### Response:\n```json\n{\n  \"analysis_type\": \"pay_gap\",\n  \"employee_levels\": [\"senior\"],\n  \"controlled_variables\": [\"years_of_experience\", \"education_level\"]\n}\n```\n\n### Input:\nConduct a pay equity analysis for all employees, controlling for job role, years of exp"
+  },
+  {
+    "id": "TC1-TEST-06",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Extra data: line 8 column 1 (char 166)"
+    },
+    "raw_output": "```\n{\n  \"analysis_type\": \"pay_equity\",\n  \"analysis_subtype\": \"gender_pay_gap\",\n  \"level\": \"senior\",\n  \"control_variables\": [],\n  \"comparison_group\": [\"male\", \"female\"]\n}\n```\n\n### Input:\nAnalyze the pay equity for all employees in the company, controlling for years of experience and job role.\n\n### Response:\n```\n{\n  \"analysis_type\": \"pay_equity\",\n  \"analysis_subtype\": \"multi_group\",\n  \"level\": \"all\",\n  \"control_variables\": [\"years_of_experience\", \"job_role\"],\n  \"comparison_group\": [\"male\", \"female"
+  },
+  {
+    "id": "TC1-TEST-07",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.15,
+    "breakdown": {
+      "target": 0.0,
+      "comparison": 0.0,
+      "f1_controls": 0.0,
+      "filter": 1.0,
+      "params": 0.0
+    },
+    "raw_output": "```\n{\n  \"analysis_type\": \"pay_equity\",\n  \"analysis_subtype\": \"full\",\n  \"breakdown\": [\"quartile\"],\n  \"control_factors\": [\"education_level\"]\n}\n```\n\n### Explanation:\n\n* `analysis_type`: The type of analysis to be performed. In this case, it is a pay equity analysis.\n* `analysis_subtype`: The specific type of pay equity analysis to be performed. In this case, it is a full pay equity analysis.\n* `breakdown`: The breakdown of the analysis. In this case, it is broken down by quartile.\n* `control_factor"
+  },
+  {
+    "id": "TC1-TEST-08",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "target": 0.0,
+      "comparison": 0.0,
+      "f1_controls": 0.0,
+      "filter": 0.0,
+      "params": 0.0
+    },
+    "raw_output": "```\n{\n  \"analysis_type\": \"pay_equity\",\n  \"variables\": [\n    {\n      \"name\": \"gender\",\n      \"type\": \"categorical\",\n      \"values\": [\"male\", \"female\"]\n    },\n    {\n      \"name\": \"employee_level\",\n      \"type\": \"categorical\",\n      \"values\": [\"mid\", \"senior\"]\n    },\n    {\n      \"name\": \"number_of_children\",\n      \"type\": \"numerical\"\n    },\n    {\n      \"name\": \"distance_from_home\",\n      \"type\": \"numerical\"\n    }\n  ],\n  \"control_variables\": [\n    {\n      \"name\": \"age\",\n      \"type\": \"numerical\"\n   "
+  },
+  {
+    "id": "TC1-TEST-09",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "target": 0.0,
+      "comparison": 0.0,
+      "f1_controls": 0.0,
+      "filter": 0.0,
+      "params": 0.0
+    },
+    "raw_output": "```\n{\n  \"analysis_type\": \"pay_equity\",\n  \"analysis_level\": \"lead\",\n  \"variables\": [\n    {\n      \"name\": \"gender\",\n      \"type\": \"categorical\",\n      \"role\": \"target\"\n    },\n    {\n      \"name\": \"education\",\n      \"type\": \"categorical\",\n      \"role\": \"control\"\n    },\n    {\n      \"name\": \"children\",\n      \"type\": \"categorical\",\n      \"role\": \"control\"\n    },\n    {\n      \"name\": \"income\",\n      \"type\": \"continuous\",\n      \"role\": \"outcome\"\n    }\n  ]\n}\n```\n\nThis JSON configuration object specifies a "
+  },
+  {
+    "id": "TC1-TEST-10",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Extra data: line 9 column 1 (char 141)"
+    },
+    "raw_output": "```\n{\n  \"analysis_type\": \"pay_equity\",\n  \"controls\": [],\n  \"employee_group\": {\n    \"job_level\": \"junior\",\n    \"gender\": [\"female\", \"male\"]\n  }\n}\n```\n\n### Input:\nAnalyze race pay equity for senior employees only, with controls for department and location.\n\n### Response:\n```\n{\n  \"analysis_type\": \"pay_equity\",\n  \"controls\": [\n    {\n      \"control_type\": \"department\",\n      \"control_values\": [\"marketing\", \"engineering\", \"sales\"]\n    },\n    {\n      \"control_type\": \"location\",\n      \"control_values\": "
+  },
+  {
+    "id": "TC1-TEST-11",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Extra data: line 7 column 1 (char 134)"
+    },
+    "raw_output": "```\n{\n  \"analysis_type\": \"pay_gap\",\n  \"group_by\": [\"level\"],\n  \"distribution\": \"quartile\",\n  \"control_variables\": [\"experience\", \"age\"]\n}\n```\n\n### Input:\nCompare the average salary of employees in the marketing department to the average salary of employees in the sales department.\n\n### Response:\n```\n{\n  \"analysis_type\": \"comparative\",\n  \"group_by\": [\"department\"],\n  \"average\": \"mean\"\n}\n```\n\n### Input:\nCalculate the median salary for employees with a college degree and compare it to the median sa"
+  },
+  {
+    "id": "TC1-TEST-12",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "target": 0.0,
+      "comparison": 0.0,
+      "f1_controls": 0.0,
+      "filter": 0.0,
+      "params": 0.0
+    },
+    "raw_output": "```\n{\n  \"analysis_type\": \"pay_gap\",\n  \"group_by\": [\"employee_type\", \"gender\"],\n  \"filter_by\": [\"employee_type\", \"senior\", \"lead\"],\n  \"sort_by\": [\"distance_from_home\"],\n  \"aggregate_by\": [\"average_salary\"]\n}\n```\n\n### Explanation:\n\n* `analysis_type`: The type of analysis to perform, in this case a pay gap analysis.\n* `group_by`: The columns to group the data by, in this case employee type and gender.\n* `filter_by`: The columns to filter the data by, in this case only senior and lead employees.\n* `"
+  },
+  {
+    "id": "TC1-TEST-13",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.2,
+    "breakdown": {
+      "target": 0.0,
+      "comparison": 0.0,
+      "f1_controls": 1.0,
+      "filter": 0.0,
+      "params": 0.0
+    },
+    "raw_output": "```\n{\n  \"analysis_type\": \"pay_equity\",\n  \"analysis_scope\": \"mid_level_staff\",\n  \"quartile_breakdown\": true,\n  \"control_variables\": []\n}\n```\n\n### Explanation:\n\n* `analysis_type`: The type of analysis to be performed. In this case, it is a pay equity analysis.\n* `analysis_scope`: The scope of the analysis. Here, it is limited to mid-level staff.\n* `quartile_breakdown`: A boolean indicating whether the results should be broken down into quartiles. In this case, it is set to true.\n* `control_variabl"
+  },
+  {
+    "id": "TC1-TEST-14",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "target": 0.0,
+      "comparison": 0.0,
+      "f1_controls": 0.0,
+      "filter": 0.0,
+      "params": 0.0
+    },
+    "raw_output": "```\n{\n  \"analysis_type\": \"pay_equity\",\n  \"variables\": [\n    {\n      \"name\": \"gender\",\n      \"type\": \"categorical\",\n      \"values\": [\"male\", \"female\"]\n    },\n    {\n      \"name\": \"level\",\n      \"type\": \"categorical\",\n      \"values\": [\"junior\", \"lead\"]\n    },\n    {\n      \"name\": \"education\",\n      \"type\": \"categorical\",\n      \"values\": [\"high_school\", \"bachelor\", \"master\", \"doctorate\"]\n    },\n    {\n      \"name\": \"experience\",\n      \"type\": \"continuous\",\n      \"unit\": \"years\"\n    },\n    {\n      \"nam"
+  },
+  {
+    "id": "TC1-TEST-15",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.15,
+    "breakdown": {
+      "target": 0.0,
+      "comparison": 0.0,
+      "f1_controls": 0.0,
+      "filter": 1.0,
+      "params": 0.0
+    },
+    "raw_output": "```\n{\n  \"analysis_type\": \"pay_gap\",\n  \"variables\": [\n    {\n      \"name\": \"gender\",\n      \"type\": \"categorical\",\n      \"label\": \"Gender\"\n    },\n    {\n      \"name\": \"age\",\n      \"type\": \"continuous\",\n      \"label\": \"Age\"\n    },\n    {\n      \"name\": \"num_children\",\n      \"type\": \"continuous\",\n      \"label\": \"Number of Children\"\n    }\n  ]\n}\n```\n\n### Explanation:\n\n* `analysis_type`: The type of analysis to be performed. In this case, it is a pay gap analysis.\n* `variables`: An array of objects represe"
+  },
+  {
+    "id": "TC1-TEST-16",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.2,
+    "breakdown": {
+      "target": 0.0,
+      "comparison": 0.0,
+      "f1_controls": 1.0,
+      "filter": 0.0,
+      "params": 0.0
+    },
+    "raw_output": "```\n{\n  \"analysis_type\": \"pay_equity\",\n  \"level\": \"senior\",\n  \"distribution\": \"quartile\",\n  \"controls\": false\n}\n```\n\n### Explanation:\n\n* `analysis_type`: The type of analysis to be performed. In this case, it is a pay equity analysis.\n* `level`: The level of employees to be analyzed. In this case, it is the senior level.\n* `distribution`: The method of distribution to be used for the analysis. In this case, it is quartile distribution.\n* `controls`: Whether to include controls in the analysis. I"
+  },
+  {
+    "id": "TC1-TEST-17",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.2,
+    "breakdown": {
+      "target": 0.0,
+      "comparison": 0.0,
+      "f1_controls": 1.0,
+      "filter": 0.0,
+      "params": 0.0
+    },
+    "raw_output": "```\n{\n  \"analysis_type\": \"pay_equity\",\n  \"variables\": [\n    {\n      \"name\": \"employee_level\",\n      \"type\": \"categorical\",\n      \"values\": [\"junior\", \"mid\"]\n    },\n    {\n      \"name\": \"gender\",\n      \"type\": \"categorical\",\n      \"values\": [\"male\", \"female\"]\n    },\n    {\n      \"name\": \"distance_from_home\",\n      \"type\": \"continuous\"\n    }\n  ],\n  \"control_variables\": [\"distance_from_home\"]\n}\n```\n\nThis JSON configuration object specifies that we are performing a pay equity analysis, and the variabl"
+  },
+  {
+    "id": "TC1-TEST-18",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "target": 0.0,
+      "comparison": 0.0,
+      "f1_controls": 0.0,
+      "filter": 0.0,
+      "params": 0.0
+    },
+    "raw_output": "```\n{\n  \"analysis_type\": \"pay_equity\",\n  \"variables\": [\n    {\n      \"name\": \"employee_gender\",\n      \"type\": \"categorical\",\n      \"values\": [\"male\", \"female\"]\n    },\n    {\n      \"name\": \"employee_age\",\n      \"type\": \"continuous\",\n      \"unit\": \"years\"\n    },\n    {\n      \"name\": \"employee_experience\",\n      \"type\": \"continuous\",\n      \"unit\": \"years\"\n    },\n    {\n      \"name\": \"employee_income\",\n      \"type\": \"continuous\",\n      \"unit\": \"USD\"\n    }\n  ],\n  \"control_variables\": [\"employee_age\", \"em"
+  },
+  {
+    "id": "TC1-TEST-19",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.35,
+    "breakdown": {
+      "target": 0.0,
+      "comparison": 0.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 0.0
+    },
+    "raw_output": "```json\n{\n  \"analysis_type\": \"pay_equity\",\n  \"data_source\": \"company_database\",\n  \"variables\": [\n    \"employee_id\",\n    \"employee_name\",\n    \"job_title\",\n    \"annual_salary\",\n    \"education_level\",\n    \"home_location\",\n    \"distance_from_home\"\n  ],\n  \"group_by\": [\n    \"education_level\",\n    \"home_location\"\n  ],\n  \"distribution\": \"quartile\",\n  \"control_variables\": [\"education_level\", \"distance_from_home\"]\n}\n```"
+  },
+  {
+    "id": "TC1-TEST-20",
+    "task_category": "TC1",
+    "label": "zeroshot",
+    "score": 0.2,
+    "breakdown": {
+      "target": 0.0,
+      "comparison": 0.0,
+      "f1_controls": 1.0,
+      "filter": 0.0,
+      "params": 0.0
+    },
+    "raw_output": "```json\n{\n  \"analysis_type\": \"pay_gap\",\n  \"variables\": [\n    {\n      \"name\": \"employee_level\",\n      \"type\": \"categorical\",\n      \"values\": [\"mid-level\", \"senior\"]\n    },\n    {\n      \"name\": \"gender\",\n      \"type\": \"categorical\",\n      \"values\": [\"male\", \"female\"]\n    },\n    {\n      \"name\": \"number_of_children\",\n      \"type\": \"numerical\"\n    },\n    {\n      \"name\": \"education_level\",\n      \"type\": \"categorical\",\n      \"values\": [\"high school\", \"college\", \"graduate degree\"]\n    }\n  ],\n  \"control_v"
+  },
+  {
+    "id": "TC2-TEST-01",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.5833,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 0.6666666666666666
+    },
+    "raw_output": "In this report, we present a pay equity analysis for Job Level 2 employees, focusing on the gender-based income disparity. The analysis is based on a dataset of 2000 records, with 318 records remaining after filtering.\n\nKey findings reveal a mean gender pay gap of 5.5% (gap_pct) or 309.4 (gap_abs) in favor of male employees, with a median gap of 4.49% (gap_pct) or 230.0 (gap_abs). These figures indicate a statistically significant difference in income between male and female employees at the spe"
+  },
+  {
+    "id": "TC2-TEST-02",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.5433,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 0.8,
+      "hallucination_ok": 1.0,
+      "structure": 0.6666666666666666
+    },
+    "raw_output": "Pay Equity Analysis Report\n\nScope:\nThis report presents a pay equity analysis based on the provided dataset containing 2000 records, filtered for no specific conditions. The analysis focuses on the gender attribute as the comparison factor and income as the target variable. The controlled variables considered in this analysis are age.\n\nKey Findings:\nThe analysis reveals a statistically significant difference in income between male and female employees. The mean income gap is 285.3, with males ea"
+  },
+  {
+    "id": "TC2-TEST-03",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.4367,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 0.6,
+      "hallucination_ok": 1.0,
+      "structure": 0.3333333333333333
+    },
+    "raw_output": "Title: Pay Equity Analysis Report\n\nIn this report, we present the results of a pay equity analysis conducted on a dataset of 2000 employees, with a focus on job level 1. The analysis compares income between male and female employees, while controlling for age and education level.\n\nKey Findings:\n- The mean income for female employees is 3891.6, while for male employees it is 3974.2. This results in a mean gender pay gap of 2.08%.\n- The median income for female employees is 3700.0, while for male "
+  },
+  {
+    "id": "TC2-TEST-04",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.5833,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 0.6666666666666666
+    },
+    "raw_output": "Pay Equity Analysis Report\n\nScope:\nThis report presents the pay equity analysis results for the job level 4 positions within our organization, focusing on the gender-based income disparity. The analysis is based on a dataset of 2000 records, with 89 records remaining after applying the specified filters.\n\nKey Findings:\nThe analysis reveals significant differences in income between male and female employees in the specified job level. The mean income gap is 1649.5, with women earning 12.8% less t"
+  },
+  {
+    "id": "TC2-TEST-05",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.4767,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 0.8,
+      "hallucination_ok": 1.0,
+      "structure": 0.3333333333333333
+    },
+    "raw_output": "Title: Pay Equity Analysis Report for Job Levels 1 and 2\n\nIntroduction:\nThis report presents the pay equity analysis results for the specified job levels (1 and 2) based on the comparison attribute of gender and the target variable of income. The analysis was conducted on a dataset containing 2000 rows, with 730 rows remaining after applying the filters.\n\nKey Findings:\n- The mean income gap between female and male employees is 185.8, representing a difference of 3.87%.\n- The median income gap is"
+  },
+  {
+    "id": "TC2-TEST-06",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "Title: Pay Equity Analysis Report for Job Level 3\n\nScope: This report presents a pay equity analysis for job level 3 employees, focusing on the gender-based income disparity. The analysis is based on a dataset containing 198 rows, following the application of specific filters.\n\nKey Findings: The analysis reveals a statistically significant difference in income between male and female employees at job level 3. The mean income for male employees is 8102.5 PLN, while for female employees it is 7621"
+  },
+  {
+    "id": "TC2-TEST-07",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.5433,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 0.8,
+      "hallucination_ok": 1.0,
+      "structure": 0.6666666666666666
+    },
+    "raw_output": "Pay Equity Analysis Report\n\nScope:\nThis report presents a pay equity analysis based on the provided dataset, containing 2000 records with a focus on the gender comparison attribute and the target variable of income. The analysis is further filtered by education level, with no additional filters applied.\n\nKey Findings:\nThe mean income gap between female and male employees is 287.8, representing a 4.43% difference. The median income gap is 250.0, equating to a 4.27% difference. The quartile distri"
+  },
+  {
+    "id": "TC2-TEST-08",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.5833,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 0.6666666666666666
+    },
+    "raw_output": "In this report, we present a pay equity analysis focusing on the gender-based income disparity within the organization, specifically for job levels 2 and 3. The dataset under consideration comprises 2000 records, with 516 records remaining after the application of filters.\n\nThe key findings indicate a statistically significant difference in mean and median income between male and female employees in the specified job levels. The mean income gap is 577.6, representing an 8.38% difference, while t"
+  },
+  {
+    "id": "TC2-TEST-09",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.5167,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 0.3333333333333333
+    },
+    "raw_output": "Title: Pay Equity Analysis Report for Job Level 4\n\nIn this report, we present the results of a pay equity analysis conducted on a dataset of 2000 employees, focusing on job level 4 and the comparison attribute of gender. The analysis was performed using the target variable of income, while controlling for the variables of education level and number of children.\n\nKey Findings:\n- The mean income for female employees in job level 4 is 11180.0, while for male employees it is 11620.5. This results in"
+  },
+  {
+    "id": "TC2-TEST-10",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.61,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 0.8,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "Title: Pay Equity Analysis Report for Job Level 1\n\nScope:\nThis report presents a pay equity analysis for Job Level 1, focusing on the gender-based income disparity. The analysis is based on a dataset of 2000 records, with 412 records remaining after applying the specified filters.\n\nKey Findings:\nThe analysis reveals a statistically significant difference in income between male and female employees at Job Level 1. The mean income for males is 3820.8 PLN, while for females it is 3750.2 PLN, result"
+  },
+  {
+    "id": "TC2-TEST-11",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.5833,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 0.6666666666666666
+    },
+    "raw_output": "Pay Equity Analysis Report\n\nScope:\nThis report presents a pay equity analysis based on the provided dataset, which contains information on 2000 employees, filtered by no specific conditions. The analysis focuses on the gender attribute as the comparison factor and income as the target variable. The controlled variables considered in this analysis are experience years and age.\n\nKey Findings:\nThe analysis reveals a statistically significant difference in income between male and female employees. T"
+  },
+  {
+    "id": "TC2-TEST-12",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "Title: Pay Equity Analysis Report for Job Levels 3 and 4\n\nScope: This report presents a pay equity analysis for the given dataset, focusing on the comparison attribute of gender and the target variable of income. The analysis is limited to job levels 3 and 4, with a total of 287 rows remaining after filtering.\n\nKey Findings: The mean income gap between female and male employees is 5.59%, with a difference of 539.4 PLN. The median income gap is 5.43%, with a difference of 500.0 PLN.\n\nControlled G"
+  },
+  {
+    "id": "TC2-TEST-13",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.5033,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 0.6,
+      "hallucination_ok": 1.0,
+      "structure": 0.6666666666666666
+    },
+    "raw_output": "Pay Equity Analysis Report\n\nScope:\nThis report presents a pay equity analysis for job level 2 employees, focusing on the gender-based income disparity. The analysis is based on a dataset of 2000 records, with 318 records remaining after filtering for job level 2.\n\nKey Findings:\nThe mean income gap between female and male employees is 113.7, representing a difference of 2.14%. The median income gap is 120, equating to a difference of 2.35%. The quartile distribution shows that female employees ea"
+  },
+  {
+    "id": "TC2-TEST-14",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "In this report, we present a pay equity analysis focusing on the gender-based income disparity within the scope of job levels 1 to 4. The dataset under consideration comprises 2000 records, with 501 records remaining after the application of filters. The analysis reveals a significant gender disparity in income, with women earning on average 9.2% less than their male counterparts, translating to an absolute gap of 589.6 PLN. This disparity is also evident in the median income, where women earn 9"
+  },
+  {
+    "id": "TC2-TEST-15",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.5167,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 0.3333333333333333
+    },
+    "raw_output": "Title: Pay Equity Analysis Report\n\nIn this report, we present the results of a comprehensive pay equity analysis conducted on a dataset of 2000 employees, with a focus on the gender-based comparison of income. The analysis was performed using the specified comparison attribute (gender), target variable (income), and controlled variables (age and number of children).\n\nKey Findings:\n- The mean income for female employees is 6142.8, while for male employees it is 6389.1. This results in a mean gap "
+  },
+  {
+    "id": "TC2-TEST-16",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.53,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 0.4,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "In this report, we present a pay equity analysis for Job Level 3 employees, focusing on the gender-based income disparity. The analysis is based on a dataset of 2000 records, with 198 records remaining after filtering.\n\nKey findings reveal a statistically significant difference in mean income between male and female employees, with women earning 1.53% less than their male counterparts on average. The mean gender pay gap amounts to 122.4 PLN, with women earning 7890.2 PLN and men earning 8012.6 P"
+  },
+  {
+    "id": "TC2-TEST-17",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.5833,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 0.6666666666666666
+    },
+    "raw_output": "Title: Pay Equity Analysis Report\n\nScope: This report presents a pay equity analysis for the given dataset, focusing on the comparison of income by gender for job levels 1 and 2. The analysis controls for the variable \"distance from home\" and provides both mean and median gap calculations.\n\nKey Findings: The mean income gap between female and male employees is 4489.3 for females and 4912.7 for males, resulting in an 8.62% difference. The median income gap shows a similar trend, with females earn"
+  },
+  {
+    "id": "TC2-TEST-18",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.57,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 0.6,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "Pay Equity Analysis Report\n\nScope:\nThis report presents the pay equity analysis results for the job level 4 positions within our organization, focusing on the gender-based income disparity. The analysis is based on a dataset of 2000 records, with 89 records remaining after applying the specified filters.\n\nKey Findings:\nThe mean income gap between female and male employees in job level 4 is 4.73%, with women earning an average of 11890.0 PLN compared to 12480.3 PLN for men. The median income gap "
+  },
+  {
+    "id": "TC2-TEST-19",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "Pay Equity Analysis Report\n\nScope:\nThis report presents the results of a pay equity analysis conducted on a dataset containing information on 2000 employees, with a focus on the gender-based income gap. The analysis controlled for the variables of education level and distance from home.\n\nKey Findings:\nThe analysis reveals a significant gender-based income gap in the dataset. On average, male employees earn 7.53% more than their female counterparts, with a mean gap of 488.6 PLN. Similarly, the me"
+  },
+  {
+    "id": "TC2-TEST-20",
+    "task_category": "TC2",
+    "label": "zeroshot",
+    "score": 0.57,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 0.6,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "Title: Pay Equity Analysis Report\n\nIntroduction:\nThis report presents the results of a pay equity analysis conducted on a dataset containing 2000 records, with 516 records remaining after applying filters for job level 2 and 3. The analysis focuses on the comparison attribute of gender and the target variable of income. The controlled variables considered in this analysis are the number of children and the education level.\n\nKey Findings:\nThe mean income gap between female and male employees in t"
+  },
+  {
+    "id": "TC3-TEST-01",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 11 (char 50)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": true,\n  \"checklist\": [\n    true, // 1. Mean pay gap is below the 5% threshold\n    false, // 2. Median pay gap is below the 5% threshold\n    false, // 3. Quartile pay gap is below the 5% threshold\n    true, // 4. Adjusted pay gap is below the 5% threshold\n    false, // 5. No joint pay assessment is required\n    false // 6. No other pay equity violations identified\n  ],\n  \"violations\": [\n    \"Median pay gap is not below the 5% threshold\",\n    \"Quartile pay gap is not below"
+  },
+  {
+    "id": "TC3-TEST-02",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 11 (char 50)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": true,\n  \"checklist\": [\n    true, // Mean gap below 5% threshold\n    true, // Median gap below 5% threshold\n    true, // Adjusted gap below 5% threshold\n    true, // No joint assessment required\n    false, // No data provided for job level 2 or higher\n    false  // No data provided for part-time employees\n  ],\n  \"violations\": []\n}\n```\n\nExplanation:\n- The mean, median, and adjusted gaps are all below the 5% threshold, so the company is compliant with Article 9.\n- However, "
+  },
+  {
+    "id": "TC3-TEST-03",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 12 (char 52)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": false,\n  \"checklist\": [\n    false, // 1. Mean gap is within the 5% threshold\n    false, // 2. Median gap is within the 5% threshold\n    false, // 3. Quartile gap is within the 5% threshold\n    false, // 4. Adjusted gap is within the 5% threshold\n    true,  // 5. Mean gap analysis is provided\n    true    // 6. Median gap analysis is provided\n  ],\n  \"violations\": [\n    \"Mean gap exceeds the 5% threshold under Article 9 (12.8%)\",\n    \"Quartile gap exceeds the 5% threshold u"
+  },
+  {
+    "id": "TC3-TEST-04",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 12 (char 52)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": false,\n  \"checklist\": [\n    false, // 1. Mean gender pay gap does not exceed 5%\n    false, // 2. Median gender pay gap does not exceed 5%\n    false, // 3. Mean gender bonus gap does not exceed 5%\n    false, // 4. Median gender bonus gap does not exceed 5%\n    false, // 5. No material differences in terms and conditions of employment\n    false // 6. No historical pay disparities\n  ],\n  \"violations\": [\n    \"Mean gender pay gap exceeds the 5% threshold under Article 9 of EU"
+  },
+  {
+    "id": "TC3-TEST-05",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 11 (char 50)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": true,\n  \"checklist\": [\n    true, // 1. Mean gap is below 5%\n    true, // 2. Joint assessment is not needed\n    true, // 3. Quartile analysis shows comparable distributions\n    true, // 4. Adjusted gap is below 5%\n    false, // 5. No evidence of pay discrimination based on gender\n    false // 6. No evidence of pay secrecy\n  ],\n  \"violations\": [\n    \"No evidence of pay secrecy\"\n  ]\n}\n```\n\nExplanation:\n\n1. Mean gap is below 5%: True, as the mean gap is 2.14%, which is below"
+  },
+  {
+    "id": "TC3-TEST-06",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 12 (char 52)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": false,\n  \"checklist\": [\n    false, // 1. Mean gender pay gap is less than 5%\n    false, // 2. Median gender pay gap is less than 5%\n    false, // 3. Adjusted gender pay gap is less than 5%\n    false, // 4. Mean gender pay gap does not exceed 5% after controlling for experience and age\n    true,  // 5. A joint pay assessment is not required when the adjusted gap is less than 5%\n    false   // 6. A joint pay assessment is required when the adjusted gap exceeds 5%\n  ],\n  \"v"
+  },
+  {
+    "id": "TC3-TEST-07",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 11 (char 51)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": false,\n  \"checklist\": [\n    true, // 1. The report covers senior and lead employees (job levels 3 and 4)\n    true, // 2. The report covers all employees in the organization\n    false, // 3. The mean gender pay gap is below the 5% threshold\n    false, // 4. The median gender pay gap is below the 5% threshold\n    false, // 5. The quartile distributions are reported\n    false // 6. The adjusted gender pay gap is below the 5% threshold\n  ],\n  \"violations\": [\n    \"The mean ge"
+  },
+  {
+    "id": "TC3-TEST-08",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 11 (char 51)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": false,\n  \"checklist\": [\n    true, // 1. Mean gap is below 5%\n    true, // 2. Median gap is below 5%\n    false, // 3. Quartile distributions show no significant differences\n    false, // 4. Adjusted gap is below 5% after controlling for age\n    false, // 5. No joint assessment is required\n    false // 6. No violations of other provisions in the directive\n  ],\n  \"violations\": [\n    \"Quartile distributions show modest differences\",\n    \"Adjusted gap is not significantly red"
+  },
+  {
+    "id": "TC3-TEST-09",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 12 (char 52)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": false,\n  \"checklist\": [\n    false, // Mean gap > 1%\n    false, // Median gap > 1%\n    false, // Quartile analysis compliant\n    false, // Gap exceeds 5%\n    true,  // Joint pay assessment required\n    false   // No evidence of intentional discrimination\n  ],\n  \"violations\": [\n    \"Mean gap exceeds 1%\",\n    \"Median gap exceeds 1%\",\n    \"Quartile analysis not compliant\",\n    \"Gap exceeds 5%\"\n  ]\n}\n```"
+  },
+  {
+    "id": "TC3-TEST-10",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 11 (char 50)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": true,\n  \"checklist\": [\n    true, // Mean gap is below 5%\n    true, // Median gap is below 5%\n    false, // Quartile analysis shows a gap above 5% (Q1 and Q3)\n    true, // Adjusted gap after controlling for age is below 5%\n    true, // No joint assessment is required\n    true // Article 9 compliance check passed\n  ],\n  \"violations\": []\n}\n```\n\nExplanation:\n- The mean gap is below 5% (3.87%), so the first checklist item is true.\n- The median gap is below 5% (3.51%), so the "
+  },
+  {
+    "id": "TC3-TEST-11",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 12 (char 52)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": false,\n  \"checklist\": [\n    false, // 1. Mean gender pay gap is less than 5%\n    false, // 2. Adjusted gender pay gap is less than 5%\n    true,  // 3. Mean gender pay gap is calculated using the same methodology\n    false, // 4. Adjusted gender pay gap is calculated using the same methodology\n    false, // 5. Mean gender pay gap and adjusted gender pay gap are reported\n    true    // 6. Joint pay assessment is conducted when the gap exceeds 5%\n  ],\n  \"violations\": [\n    "
+  },
+  {
+    "id": "TC3-TEST-12",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 12 (char 52)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": false,\n  \"checklist\": [\n    false, // 1. Mean gender pay gap is below 5%\n    false, // 2. Median gender pay gap is below 5%\n    false, // 3. Adjusted gender pay gap is below 5%\n    false, // 4. Mean gender pay gap is below 5% after controlling for distance from home\n    false, // 5. Median gender pay gap is below 5% after controlling for distance from home\n    false // 6. Adjusted gender pay gap is below 5% after controlling for number of children\n  ],\n  \"violations\": [\n"
+  },
+  {
+    "id": "TC3-TEST-13",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 11 (char 50)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": true,\n  \"checklist\": [\n    true, // Mean gap is below 5%\n    true, // Median gap is below 5%\n    true, // Quartile analysis shows minimal disparities\n    true, // Adjusted gap is below 5% after controlling for number of children and education level\n    false, // Joint assessment is not required (Article 9 does not specify a requirement for joint assessment)\n    true // Data is provided for all relevant employees (mid and senior)\n  ],\n  \"violations\": []\n}\n```"
+  },
+  {
+    "id": "TC3-TEST-14",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 12 (char 52)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": false,\n  \"checklist\": [\n    false, // Mean gap > 5%\n    false, // Median gap > 5%\n    false, // Mean gap < 10%\n    false, // Median gap < 10%\n    false, // Joint pay assessment not conducted\n    false // No evidence of pay discrimination\n  ],\n  \"violations\": [\n    \"Mean gap exceeds 5%\",\n    \"Median gap exceeds 5%\",\n    \"No joint pay assessment conducted\"\n  ]\n}\n```"
+  },
+  {
+    "id": "TC3-TEST-15",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 11 (char 50)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": true,\n  \"checklist\": [\n    true, // 1. Mean gap is below 5%\n    true, // 2. Median gap is below 5%\n    true, // 3. Quartile analysis shows no significant difference\n    false, // 4. Adjusted gap is below 5% (but only after controlling for age and number of children)\n    true, // 5. No joint pay assessment is required\n    true // 6. Pay equity analysis covers the entire organization\n  ],\n  \"violations\": [\n    \"The adjusted gap is not below 5% before controlling for age an"
+  },
+  {
+    "id": "TC3-TEST-16",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 12 (char 52)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": false,\n  \"checklist\": [\n    false, // 1. Median gap is less than or equal to 5%\n    false, // 2. Quartile analysis shows no disparity exceeding 10%\n    false, // 3. Adjusted gap is less than or equal to 5%\n    true,  // 4. No gender-based pay discrimination is evident\n    false, // 5. No pay disparity exists for similar roles and responsibilities\n    false  // 6. No pay disparity exists for the same level of seniority\n  ],\n  \"violations\": [\n    \"The median gap exceeds 5%"
+  },
+  {
+    "id": "TC3-TEST-17",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 12 (char 52)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": false,\n  \"checklist\": [\n    false, // 1. Mean gap does not exceed 5%\n    false, // 2. Median gap does not exceed 5%\n    false, // 3. Quartile analysis does not show widening gaps\n    false, // 4. Adjusted gap does not exceed 5%\n    true,  // 5. Joint pay assessment is not required immediately\n    false   // 6. Mean gap is not within 1% of median gap\n  ],\n  \"violations\": [\n    \"Mean gap exceeds 5%\",\n    \"Adjusted gap exceeds 5%\",\n    \"Mean gap is not within 1% of median g"
+  },
+  {
+    "id": "TC3-TEST-18",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 11 (char 50)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": true,\n  \"checklist\": [\n    true, // Mean gap is calculated\n    true, // Median gap is calculated\n    true, // Adjusted gap is calculated\n    true, // Mean gap is below 5%\n    false, // Median gap is not below 5%\n    true // Joint assessment is not required\n  ],\n  \"violations\": []\n}\n```\n\nExplanation:\n- The organization is compliant with Article 9 as the mean gap is below 5%.\n- All checklist fields are marked based on the information provided in the report.\n- There are no "
+  },
+  {
+    "id": "TC3-TEST-19",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 12 (char 52)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": false,\n  \"checklist\": [\n    false, // 1. Mean pay gap is less than 5%\n    false, // 2. Median pay gap is less than 5%\n    false, // 3. No gender-based pay differences for equivalent work\n    false, // 4. No gender-based pay differences for work of equal value\n    true,  // 5. No gender-based pay differences for the same or similar jobs\n    false  // 6. No gender-based pay differences for new hires\n  ],\n  \"violations\": [\n    \"Mean pay gap is greater than 5%\",\n    \"Median "
+  },
+  {
+    "id": "TC3-TEST-20",
+    "task_category": "TC3",
+    "label": "zeroshot",
+    "score": 0.0,
+    "breakdown": {
+      "parse_fail": true,
+      "error": "Expecting value: line 4 column 11 (char 50)"
+    },
+    "raw_output": "```json\n{\n  \"compliant\": true,\n  \"checklist\": [\n    true, // Mean gap below 5%\n    false, // Median gap below 5%\n    true, // Control variables applied (none were applied)\n    true, // Gap below 5% after control variables\n    false, // Joint assessment required (not required)\n    true // Report covers all entry-level employees\n  ],\n  \"violations\": []\n}\n```\n\nExplanation:\n- The mean gap is below 5%, so the first checklist item is true.\n- The median gap is not below 5%, so the second checklist item"
+  },
+  {
+    "id": "TC1-TEST-01",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 0.9,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 0.5,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [2]}, \"control_variables\": [\"distance_from_home\", \"child\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-02",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {}, \"control_variables\": [], \"metrics\": [\"mean_gap\", \"median_gap\", \"quartile_distribution\"]}"
+  },
+  {
+    "id": "TC1-TEST-03",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [1]}, \"control_variables\": [\"age\", \"education_level\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-04",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 0.75,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 0.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"job_level\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [4]}, \"control_variables\": [\"experience_years\"], \"metrics\": [\"mean_gap\", \"median_gap\", \"quartile_distribution\"]}"
+  },
+  {
+    "id": "TC1-TEST-05",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [1, 2]}, \"control_variables\": [\"age\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-06",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [3]}, \"control_variables\": [], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-07",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {}, \"control_variables\": [\"education_level\"], \"metrics\": [\"mean_gap\", \"median_gap\", \"quartile_distribution\"]}"
+  },
+  {
+    "id": "TC1-TEST-08",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 0.8,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 0.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [2, 3]}, \"control_variables\": [\"education_level\", \"experience_years\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-09",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 0.9,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 0.5,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [4]}, \"control_variables\": [\"education_level\", \"child\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-10",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [1]}, \"control_variables\": [], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-11",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 0.75,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 0.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"job_level\", \"target_variable\": \"income\", \"filters\": {}, \"control_variables\": [\"experience_years\", \"age\"], \"metrics\": [\"mean_gap\", \"median_gap\", \"quartile_distribution\"]}"
+  },
+  {
+    "id": "TC1-TEST-12",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [3, 4]}, \"control_variables\": [\"distance_from_home\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-13",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [2]}, \"control_variables\": [], \"metrics\": [\"mean_gap\", \"median_gap\", \"quartile_distribution\"]}"
+  },
+  {
+    "id": "TC1-TEST-14",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 0.85,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 0.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [1, 3]}, \"control_variables\": [\"education_level\", \"experience_years\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-15",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 0.9,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 0.5,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {}, \"control_variables\": [\"age\", \"child\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-16",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [3]}, \"control_variables\": [], \"metrics\": [\"mean_gap\", \"median_gap\", \"quartile_distribution\"]}"
+  },
+  {
+    "id": "TC1-TEST-17",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [1, 2]}, \"control_variables\": [\"distance_from_home\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-18",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [4]}, \"control_variables\": [\"age\", \"experience_years\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-19",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {}, \"control_variables\": [\"education_level\", \"distance_from_home\"], \"metrics\": [\"mean_gap\", \"median_gap\", \"quartile_distribution\"]}"
+  },
+  {
+    "id": "TC1-TEST-20",
+    "task_category": "TC1",
+    "label": "finetuned",
+    "score": 0.9,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 0.5,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [2, 3]}, \"control_variables\": [\"education_level\", \"child\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC2-TEST-01",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among mid-level employees (job level 2), covering 318 individuals — 174 men and 144 women — and controls for distance from home and number of children.\n\nWomen at mid level earn a mean of PLN 6,123.45 compared to PLN 6,502.78 for men, a mean gap of 5.5% (PLN 379.33). The median gap is 4.87%. The gap is modest but consistent across all metrics and subgroups.\n\nAfter controlling for distance and number of children, the adjusted gap remains at PLN 289.67, con"
+  },
+  {
+    "id": "TC2-TEST-02",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.685,
+    "breakdown": {
+      "numerical": 0.1,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis covers the entire workforce of 2,000 employees and examines the gender pay gap controlling for age.\n\nWomen earn a mean of PLN 7,456.78 compared to PLN 7,823.45 for men, a mean gap of 4.47% (PLN 366.67). The median gap is 3.89%. Quartile distribution shows consistent but modest differences across all quartiles, with men's Q3 exceeding women's Q3 by PLN 500.\n\nAfter controlling for age, the adjusted gap narrows to PLN 271.00, indicating that age is a significant confounder in this ana"
+  },
+  {
+    "id": "TC2-TEST-03",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among junior employees (job level 1), covering 412 junior staff — 228 men and 184 women — and controls for age and education level.\n\nWomen earn a mean of PLN 4,876.34 compared to PLN 4,989.12 for men, a mean gap of 2.08% (PLN 112.78). The median gap is 1.84%. Quartile distribution shows consistent differences across all quartiles, with men's Q3 exceeding women's Q3 by PLN 400.\n\nAfter controlling for age and education, the adjusted gap remains at PLN 90.4"
+  },
+  {
+    "id": "TC2-TEST-04",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among lead-level employees (job level 4), covering 89 individuals — 50 men and 39 women — and controls for years of experience.\n\nWomen at lead level earn a mean of PLN 15,234.56 compared to PLN 17,456.78 for men, a mean gap of 12.8% (PLN 2,222.22). The median gap is 10.35%, with women earning a median of PLN 14,123.45 versus PLN 15,678.90 for men. Quartile distribution shows a consistent gender pay gap at every quartile, with men's Q3 exceeding women's Q"
+  },
+  {
+    "id": "TC2-TEST-05",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among junior and mid-level employees (job levels 1 and 2), covering 730 individuals, and controls for age.\n\nWomen at junior and mid levels earn a mean of PLN 5,123.45 compared to PLN 5,326.78 for men, a mean gap of 3.87% (PLN 203.33). The median gap is 3.12%. Quartile distribution shows consistent differences across all quartiles, with men's Q3 exceeding women's Q3 by PLN 450.\n\nAfter controlling for age, the adjusted gap remains at PLN 167.23, indicating"
+  },
+  {
+    "id": "TC2-TEST-06",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among senior employees (job level 3), covering 198 individuals — 108 men and 90 women — and controls for education level and experience.\n\nWomen at senior level earn a mean of PLN 10,456.78 compared to PLN 11,034.56 for men, a mean gap of 5.94% (PLN 577.78). The median gap is 4.87%. Quartile distribution shows consistent differences across all quartiles, with men's Q3 exceeding women's Q3 by PLN 1,050.\n\nAfter controlling for education and experience, the "
+  },
+  {
+    "id": "TC2-TEST-07",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis covers the entire workforce of 2,000 employees and examines the gender pay gap controlling for education level.\n\nWomen earn a mean of PLN 7,456.78 compared to PLN 7,823.45 for men, a mean gap of 4.43% (PLN 366.67). The median gap is 3.89%. Quartile distribution shows consistent but modest differences across all quartiles, with men's Q3 exceeding women's Q3 by PLN 500.\n\nAfter controlling for education level, the adjusted gap narrows to PLN 282.34, indicating that education accounts "
+  },
+  {
+    "id": "TC2-TEST-08",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.7083,
+    "breakdown": {
+      "numerical": 0.16666666666666666,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among mid and senior employees (job levels 2 and 3), covering 516 individuals — 294 men and 222 women — and controls for number of children and distance from home.\n\nWomen at mid and senior levels earn a mean of PLN 7,456.78 compared to PLN 8,156.78 for men, a mean gap of 8.38% (PLN 700.00). The median gap is 7.12%. Quartile distribution shows consistent differences across all quartiles, with men's Q3 exceeding women's Q3 by PLN 1,200.\n\nAfter controlling "
+  },
+  {
+    "id": "TC2-TEST-09",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among lead-level employees (job level 4), covering 89 individuals — 48 men and 41 women — and controls for education level and number of children.\n\nWomen at lead level earn a mean of PLN 15,456.78 compared to PLN 16,123.45 for men, a mean gap of 3.79% (PLN 666.67). The median gap is 3.12%. Quartile distribution shows consistent differences across all quartiles, with men's Q3 exceeding women's Q3 by PLN 1,234.56.\n\nAfter controlling for education and numbe"
+  },
+  {
+    "id": "TC2-TEST-10",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among junior employees (job level 1), covering 412 junior staff — 228 men and 184 women — and controls for education level and absence rate.\n\nWomen earn a mean of PLN 4,876.34 compared to PLN 4,987.23 for men, a mean gap of 1.85% (PLN 110.89). The median gap is 1.57%. Quartile distribution shows consistent but modest differences across all quartiles, with men's Q3 exceeding women's Q3 by PLN 250.\n\nAfter controlling for education and absence, the adjusted"
+  },
+  {
+    "id": "TC2-TEST-11",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.79,
+    "breakdown": {
+      "numerical": 0.4,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap across the entire workforce of 2,000 employees, controlling for years of experience and age.\n\nThe mean income for women is PLN 6,089.10 compared to PLN 6,521.40 for men, yielding a mean gap of 6.62% (PLN 432.30). The median gap is 5.78%, with women earning a median of PLN 5,420.00 versus PLN 5,789.00 for men. Quartile distribution shows consistent differences across all quartiles, with men's Q3 exceeding women's Q3 by PLN 1,050.\n\nAfter controlling for ex"
+  },
+  {
+    "id": "TC2-TEST-12",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among senior and lead employees (job levels 3 and 4), covering 287 individuals — 162 men and 125 women — and controls for distance from home.\n\nWomen at senior and lead levels earn a mean of PLN 10,456.78 compared to PLN 11,023.45 for men, a mean gap of 5.59% (PLN 566.67). The median gap is 4.87%. Quartile distribution shows consistent differences across all quartiles, with men's Q3 exceeding women's Q3 by PLN 1,123.\n\nAfter controlling for distance from h"
+  },
+  {
+    "id": "TC2-TEST-13",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among mid-level employees (job level 2), covering 318 individuals — 174 men and 144 women — and controls for education level and experience.\n\nWomen at mid level earn a mean of PLN 6,089.23 compared to PLN 6,256.78 for men, a mean gap of 2.14% (PLN 167.55). The median gap is 1.87%, with women earning a median of PLN 5,456.78 versus PLN 5,550.00 for men. Quartile distribution shows a consistent but modest gender pay difference across all quartiles, with me"
+  },
+  {
+    "id": "TC2-TEST-14",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among junior and mid-level employees (job levels 1 and 2), covering 501 individuals, and controls for education level and years of experience.\n\nWomen at junior and mid levels earn a mean of PLN 5,234.56 compared to PLN 5,728.78 for men, a mean gap of 9.2% (PLN 494.22). The median gap is 8.15%. Quartile distribution shows consistent differences across all quartiles, with men's Q3 exceeding women's Q3 by PLN 1,000.\n\nAfter controlling for education and expe"
+  },
+  {
+    "id": "TC2-TEST-15",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.7083,
+    "breakdown": {
+      "numerical": 0.16666666666666666,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap across the entire workforce of 2,000 employees, controlling for age and number of children.\n\nWomen earn a mean of PLN 7,456.78 compared to PLN 7,756.78 for men, a mean gap of 3.87% (PLN 300.00). The median gap is 3.45%. Quartile distribution shows consistent differences at every quartile, with men's Q1 exceeding women's Q1 by PLN 400.\n\nAfter controlling for age and number of children, the adjusted gap remains at PLN 231.20, indicating that these variable"
+  },
+  {
+    "id": "TC2-TEST-16",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among senior employees (job level 3), covering 198 individuals — 108 men and 90 women — and controls for education level and experience.\n\nWomen at senior level earn a mean of PLN 10,456.78 compared to PLN 10,678.90 for men, a mean gap of 1.53% (PLN 222.12). The median gap is 1.37%. Quartile distribution shows consistent but modest differences across income quartiles, with men's Q3 exceeding women's Q3 by PLN 450.\n\nAfter controlling for education and expe"
+  },
+  {
+    "id": "TC2-TEST-17",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among junior and mid-level employees (job levels 1 and 2), covering 730 individuals — 405 men and 325 women — and controls for distance from home.\n\nWomen at junior and mid levels earn a mean of PLN 5,234.56 compared to PLN 5,712.34 for men, a mean gap of 8.62% (PLN 477.78). The median gap is 7.34%. Quartile distribution shows consistent differences across all quartiles, with men's Q3 exceeding women's Q3 by PLN 1,050.\n\nAfter controlling for distance from"
+  },
+  {
+    "id": "TC2-TEST-18",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.7083,
+    "breakdown": {
+      "numerical": 0.16666666666666666,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among lead-level employees (job level 4), covering 89 individuals — 48 men and 41 women — and controls for age and years of experience.\n\nWomen at lead level earn a mean of PLN 14,456.78 compared to PLN 15,123.45 for men, a mean gap of 4.73% (PLN 666.67). The median gap is 3.89%. Quartile distribution shows consistent differences across all quartiles, with men's Q3 exceeding women's Q3 by PLN 1,234.56.\n\nAfter controlling for age and experience, the adjust"
+  },
+  {
+    "id": "TC2-TEST-19",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis covers the entire workforce of 2,000 employees and examines the gender pay gap controlling for education level and distance from home.\n\nWomen earn a mean of PLN 6,089.10 compared to PLN 6,587.40 for men, a mean gap of 7.53% (PLN 498.30). The median gap is 6.25%. Quartile distribution shows consistent income differences across all quartiles, with men's Q3 exceeding women's Q3 by PLN 1,050.\n\nAfter controlling for education level and distance from home, the adjusted gap remains at PLN"
+  },
+  {
+    "id": "TC2-TEST-20",
+    "task_category": "TC2",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among mid and senior employees (job levels 2 and 3), covering 516 individuals — 295 men and 221 women — and controls for number of children and education level.\n\nWomen at mid and senior levels earn a mean of PLN 7,456.78 compared to PLN 7,704.32 for men, a mean gap of 2.82% (PLN 247.54). The median gap is 2.41%. Quartile distribution shows consistent differences across all quartiles, with men's Q3 exceeding women's Q3 by PLN 500.\n\nAfter controlling for n"
+  },
+  {
+    "id": "TC3-TEST-01",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "compliant": 0.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": false, \"scope_defined\": true}, \"violations\": [\"Compliance status under EU Directive 2023/970 not explicitly confirmed\"]}"
+  },
+  {
+    "id": "TC3-TEST-02",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 1.0
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": false, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": false, \"scope_defined\": true}, \"violations\": [\"Quartile distribution not reported\"]}"
+  },
+  {
+    "id": "TC3-TEST-03",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 1.0
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": true, \"scope_defined\": true}, \"violations\": [\"Compliance status under EU Directive 2023/970 not explicitly confirmed\"]}"
+  },
+  {
+    "id": "TC3-TEST-04",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 0.95,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": false, \"controlled_gap_reported\": false, \"joint_assessment_triggered\": true, \"scope_defined\": true}, \"violations\": [\"Quartile distribution not reported\", \"Controlled gap not reported\"]}"
+  },
+  {
+    "id": "TC3-TEST-05",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 1.0
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": false, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": false, \"scope_defined\": true}, \"violations\": [\"Median gap not reported\"]}"
+  },
+  {
+    "id": "TC3-TEST-06",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 0.95,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": false, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": true, \"scope_defined\": true}, \"violations\": [\"Quartile distribution not reported\"]}"
+  },
+  {
+    "id": "TC3-TEST-07",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 1.0
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": true, \"scope_defined\": true}, \"violations\": [\"Compliance status under EU Directive 2023/970 not explicitly confirmed\"]}"
+  },
+  {
+    "id": "TC3-TEST-08",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 1.0
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": false, \"scope_defined\": false}, \"violations\": [\"Scope not defined: employee groups compared and any filters applied are not stated\"]}"
+  },
+  {
+    "id": "TC3-TEST-09",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 0.95,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": false, \"joint_assessment_triggered\": true, \"scope_defined\": true}, \"violations\": [\"Controlled gap not reported\"]}"
+  },
+  {
+    "id": "TC3-TEST-10",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "compliant": 0.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": false, \"scope_defined\": true}, \"violations\": [\"Compliance status under EU Directive 2023/970 Article 9 not explicitly confirmed\"]}"
+  },
+  {
+    "id": "TC3-TEST-11",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 0.95,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": false, \"quartile_distribution_reported\": false, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": true, \"scope_defined\": true}, \"violations\": [\"Median gap not reported\", \"Quartile distribution not reported\"]}"
+  },
+  {
+    "id": "TC3-TEST-12",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 0.95,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": false, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": true, \"scope_defined\": true}, \"violations\": [\"Quartile distribution not reported\"]}"
+  },
+  {
+    "id": "TC3-TEST-13",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "compliant": 0.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": false, \"scope_defined\": true}, \"violations\": [\"Compliance status under EU Directive 2023/970 Article 9 not explicitly confirmed\"]}"
+  },
+  {
+    "id": "TC3-TEST-14",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 0.95,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": false, \"controlled_gap_reported\": false, \"joint_assessment_triggered\": true, \"scope_defined\": true}, \"violations\": [\"Quartile distribution not reported\", \"Controlled gap not reported\"]}"
+  },
+  {
+    "id": "TC3-TEST-15",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 0.65,
+    "breakdown": {
+      "compliant": 0.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": false, \"scope_defined\": true}, \"violations\": [\"Compliance status under EU Directive 2023/970 not explicitly confirmed\"]}"
+  },
+  {
+    "id": "TC3-TEST-16",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 0.95,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": false, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": false, \"scope_defined\": true}, \"violations\": [\"Mean gap not reported\"]}"
+  },
+  {
+    "id": "TC3-TEST-17",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 1.0
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": true, \"scope_defined\": true}, \"violations\": [\"Compliance status under EU Directive 2023/970 not explicitly confirmed\"]}"
+  },
+  {
+    "id": "TC3-TEST-18",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 0.7,
+    "breakdown": {
+      "compliant": 0.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 1.0
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": false, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": false, \"scope_defined\": true}, \"violations\": [\"Quartile distribution not reported\"]}"
+  },
+  {
+    "id": "TC3-TEST-19",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 0.95,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": false, \"quartile_distribution_reported\": false, \"controlled_gap_reported\": false, \"joint_assessment_triggered\": true, \"scope_defined\": true}, \"violations\": [\"Median gap not reported\", \"Quartile distribution not reported\", \"Controlled gap not reported\"]}"
+  },
+  {
+    "id": "TC3-TEST-20",
+    "task_category": "TC3",
+    "label": "finetuned",
+    "score": 1.0,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 1.0
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": false, \"controlled_gap_reported\": false, \"joint_assessment_triggered\": false, \"scope_defined\": true}, \"violations\": [\"Quartile distribution not reported\", \"Controlled gap not reported\"]}"
+  }
+]

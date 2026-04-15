@@ -1,0 +1,23 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+venv313/
+
+# CUDA installer
+cuda_13.2.0_windows.exe
+
+# Unsloth cache
+unsloth_compiled_cache/
+
+# Model outputs (large binary files)
+output_peft/
+
+# HuggingFace cache
+.cache/

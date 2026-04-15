@@ -1,0 +1,782 @@
+[
+  {
+    "id": "TC1-TEST-01",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 0.9,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 0.5,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [2]}, \"control_variables\": [\"distance_from_home\", \"children\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-02",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 0.85,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 0.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {}, \"control_variables\": [], \"metrics\": [\"mean_gap\", \"median_gap\"], \"group_by\": [\"quartile\"]}"
+  },
+  {
+    "id": "TC1-TEST-03",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [1]}, \"control_variables\": [\"age\", \"education_level\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-04",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 0.6,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 0.0,
+      "f1_controls": 1.0,
+      "filter": 0.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"job_level\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [1]}, \"control_variables\": [\"experience_years\"], \"metrics\": [\"mean_gap\", \"median_gap\", \"quartile_distribution\"]}"
+  },
+  {
+    "id": "TC1-TEST-05",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [1, 2]}, \"control_variables\": [\"age\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-06",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [3]}, \"control_variables\": [], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-07",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 0.4,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 0.0,
+      "f1_controls": 0.0,
+      "filter": 0.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"job_level\", \"target_variable\": \"income\", \"filters\": {\"gender\": [1]}, \"control_variables\": [\"experience_years\"], \"metrics\": [\"mean_gap\", \"median_gap\", \"quartile_distribution\"]}"
+  },
+  {
+    "id": "TC1-TEST-08",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 0.9,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 0.5,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [2, 3]}, \"control_variables\": [\"children\", \"distance_from_home\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-09",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 0.75,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 0.5,
+      "filter": 0.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [1]}, \"control_variables\": [\"education_level\", \"children\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-10",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [1]}, \"control_variables\": [], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-11",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 0.6,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 0.0,
+      "f1_controls": 1.0,
+      "filter": 0.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"job_level\", \"target_variable\": \"income\", \"filters\": {\"child\": 0}, \"control_variables\": [\"experience_years\", \"age\"], \"metrics\": [\"mean_gap\", \"median_gap\", \"quartile_distribution\"]}"
+  },
+  {
+    "id": "TC1-TEST-12",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 0.85,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 0.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [3, 2]}, \"control_variables\": [\"distance_from_home\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-13",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [2]}, \"metrics\": [\"mean_gap\", \"median_gap\", \"quartile_distribution\"], \"control_variables\": []}"
+  },
+  {
+    "id": "TC1-TEST-14",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 0.85,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 0.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [1, 2], \"child\": 0}, \"control_variables\": [\"education_level\", \"experience_years\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-15",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 0.75,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 0.5,
+      "filter": 0.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [1, 2, 3]}, \"control_variables\": [\"age\", \"children\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-16",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 1.0,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [3]}, \"metrics\": [\"mean_gap\", \"median_gap\", \"quartile_distribution\"], \"control_variables\": []}"
+  },
+  {
+    "id": "TC1-TEST-17",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 0.75,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 0.0,
+      "f1_controls": 1.0,
+      "filter": 1.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"job_level\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [1, 2]}, \"control_variables\": [\"distance_from_home\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-18",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 0.85,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 1.0,
+      "f1_controls": 1.0,
+      "filter": 0.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"gender\", \"target_variable\": \"income\", \"filters\": {\"job_level\": [3]}, \"control_variables\": [\"age\", \"experience_years\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC1-TEST-19",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 0.6,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 0.0,
+      "f1_controls": 1.0,
+      "filter": 0.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"job_level\", \"target_variable\": \"income\", \"filters\": {\"child\": 0}, \"control_variables\": [\"education_level\", \"distance_from_home\"], \"metrics\": [\"mean_gap\", \"median_gap\", \"quartile_distribution\"]}"
+  },
+  {
+    "id": "TC1-TEST-20",
+    "task_category": "TC1",
+    "label": "ft-n40",
+    "score": 0.5333,
+    "breakdown": {
+      "target": 1.0,
+      "comparison": 0.0,
+      "f1_controls": 0.6666666666666666,
+      "filter": 0.0,
+      "params": 1.0
+    },
+    "raw_output": "{\"comparison_attribute\": \"job_level\", \"target_variable\": \"income\", \"filters\": {\"child\": [0, 1], \"job_level\": [2, 3]}, \"control_variables\": [\"education_level\"], \"metrics\": [\"mean_gap\", \"median_gap\"]}"
+  },
+  {
+    "id": "TC2-TEST-01",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.7667,
+    "breakdown": {
+      "numerical": 0.3333333333333333,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among mid-level employees (job level 2), covering 318 individuals and 171 men and 147 women.\n\nWomen at mid level earn a mean of PLN 5,212.40 compared to PLN 5,621.80 for men, a mean gap of 5.5% (PLN 409.40). The median gap is 4.49% (PLN 230.00). The gap is modest and within the 5% threshold set by EU Directive 2023/970.\n\nAfter controlling for distance from home and number of children, the adjusted gap narrows to PLN 346.00, indicating that family and com"
+  },
+  {
+    "id": "TC2-TEST-02",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among 2,000 employees, covering both men and women, and controls for age.\n\nWomen earn a mean of PLN 4,104.20 compared to PLN 4,389.50 for men, a mean gap of 6.45 percent. The median gap is 6.23 percent, indicating that the relationship is consistent across the income distribution.\n\nThe quartile distribution shows that women are underrepresented at higher income levels, with only 12.3 percent in the top quartile compared to 17.4 percent of men.\n\nAfter con"
+  },
+  {
+    "id": "TC2-TEST-03",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among junior employees (job level 1), covering 412 individuals, and controls for age and education level.\n\nAmong junior employees, women earn a mean of PLN 3,456.23 compared to PLN 3,567.45 for men, a mean gap of 2.98%. The median gap is 3.12%. These figures indicate a modest pay advantage for men at the junior level, which is consistent with the overall gender pay gap observed across the organisation.\n\nAfter controlling for age and education level, the "
+  },
+  {
+    "id": "TC2-TEST-04",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among senior employees (job level 4), covering 89 individuals, and controls for years of experience.\n\nWomen at senior level earn a mean of PLN 12,456.21 compared to PLN 14,321.90 for men, a mean gap of 12.8% (PLN 1,865.69). The median gap is 11.76% (PLN 1,600.00). Quartile distribution shows women at this level are concentrated in the lower half of the pay range, with a Q1 of PLN 10,000.00 and a Q3 of PLN 14,000.00.\n\nAfter controlling for experience, the"
+  },
+  {
+    "id": "TC2-TEST-05",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among junior employees (job level 1 and 2), covering 730 individuals and 730 pay transactions.\n\nAmong junior employees, men earn a mean of PLN 4,123.45 compared to PLN 3,901.23 for women, a mean gap of 6.34%. The median gap is 5.67%. The gap is pronounced and warrants investigation.\n\nAfter controlling for age, the adjusted gap narrows to PLN 123.45, indicating that a significant portion of the gap among junior employees is due to age differences.\n\nThe ga"
+  },
+  {
+    "id": "TC2-TEST-06",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among senior employees (job level 3), covering 198 individuals, and compares the mean and median earnings of men and women in this subgroup.\n\nAmong senior employees, women earn a mean of PLN 7,456.19 compared to PLN 8,123.45 for men, a mean gap of 8.15%. The median gap is 7.89%. These figures indicate a significant pay gap at the senior level, with women earning 8.15% less than men on average.\n\nAfter controlling for education and experience, the gap narr"
+  },
+  {
+    "id": "TC2-TEST-07",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among 2,000 employees, covering both men and women, and controls for education level.\n\nWomen earn a mean of PLN 5,110.25 compared to PLN 5,456.78 for men, a mean gap of 6.45 percent. The median gap is 5.67 percent, and the quartile distribution shows that women are underrepresented at all income levels.\n\nAfter controlling for education level, the gap narrows to 4.12 percent, indicating that education is a significant factor in explaining the gender pay g"
+  },
+  {
+    "id": "TC2-TEST-08",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among mid-level (job level 2) and senior employees (job level 3), covering 516 individuals, and controls for the number of children and distance from home.\n\nWomen at mid and senior levels earn a mean of PLN 6,123.45 compared to PLN 7,012.34 for men, a mean gap of 12.34 percent. The median gap is 11.78 percent. The gap is pronounced and warrants investigation.\n\nAfter controlling for the number of children and distance from home, the adjusted gap is PLN 1,"
+  },
+  {
+    "id": "TC2-TEST-09",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among senior employees (job level 4), covering 89 individuals, and controls for education level and number of children.\n\nAmong senior employees, men earn a mean of PLN 12,456.23 compared to PLN 11,234.56 for women, a mean gap of 9.93%. The median gap is 9.45%. The gap is pronounced and warrants investigation.\n\nAfter controlling for education and family size, the adjusted gap is PLN 1,234.56, indicating that the gap among senior employees is largely drive"
+  },
+  {
+    "id": "TC2-TEST-10",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among junior employees (job level 1), covering 412 individuals and 412 pay records.\n\nAmong junior employees, men earn a mean of PLN 4,123.45 compared to PLN 4,056.78 for women, a mean gap of 1.85%. The median gap is 1.23%. The gap is modest and in line with expectations for junior employees.\n\nAfter controlling for education and experience, the gap narrows to 0.45%, indicating that education and experience are significant factors in determining pay for ju"
+  },
+  {
+    "id": "TC2-TEST-11",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among 2,000 employees, covering both men and women, and controls for experience and age.\n\nWomen earn a mean of PLN 5,089.10 compared to PLN 5,621.40 for men, a gap of 8.93 percent. The median gap is 8.45 percent, indicating that women at the middle of the income distribution earn less than their male counterparts. The quartile distribution shows that women are underrepresented at higher income levels and overrepresented at lower levels.\n\nAfter controllin"
+  },
+  {
+    "id": "TC2-TEST-12",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among senior and lead employees (job levels 3 and 4), covering 287 individuals, and controls for distance from home.\n\nWomen at senior and lead levels earn a mean of PLN 9,412.34 compared to PLN 10,234.56 for men, a mean gap of 7.45%. The median gap is 6.78%. After controlling for distance from home, the adjusted gap narrows to 6.12%, indicating that home location is a significant factor in pay variation among senior and lead employees.\n\nThe gap among sen"
+  },
+  {
+    "id": "TC2-TEST-13",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.9222,
+    "breakdown": {
+      "numerical": 0.7777777777777778,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among mid-level employees (job level 2), covering 318 individuals and 171 men and 147 women.\n\nWomen at mid level earn a mean of PLN 5,198.70 compared to PLN 5,312.40 for men, a gap of 2.14% or PLN 113.70. The median gap is 2.35%. Quartile distribution shows women at mid level earning between PLN 3,600.00 and PLN 6,500.00, while men earn between PLN 3,720.00 and PLN 6,750.00.\n\nAfter controlling for education and experience, the gap narrows to 1.85%, indic"
+  },
+  {
+    "id": "TC2-TEST-14",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among junior and senior employees (job levels 1 and 4), covering 501 individuals, and controls for education level and years of experience.\n\nAmong junior and senior employees, women earn a mean of PLN 4,123.45 compared to PLN 4,567.89 for men, a mean gap of 9.2%. The median gap is 9.26%. The gap is pronounced among senior employees, with a mean gap of 10.5% at job level 4.\n\nAfter controlling for education and experience, the adjusted gap is PLN 556.21, i"
+  },
+  {
+    "id": "TC2-TEST-15",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.7083,
+    "breakdown": {
+      "numerical": 0.16666666666666666,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among 2,000 employees, covering all staff and covering a gap of 3.87% at the mean and 3.85% at the median.\n\nWomen earn a mean of PLN 5,142.80 compared to PLN 5,389.10 for men, a difference of PLN 246.30. The median gap is PLN 220.00. The gap is modest and well within the 5% threshold set by EU Directive 2023/970.\n\nAfter controlling for age and number of children, the adjusted gap narrows to PLN 184.45, indicating that the gap is largely driven by differe"
+  },
+  {
+    "id": "TC2-TEST-16",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among senior employees (job level 3), covering 198 individuals and 118 men and 80 women.\n\nAmong senior employees, women earn a mean of PLN 9,123.45 compared to PLN 9,456.78 for men, a mean gap of 3.45%. The median gap is 3.21%, and the quartile distribution shows that women at this level earn between PLN 6,000 and PLN 12,000, while men earn between PLN 7,000 and PLN 14,000.\n\nThe gap among senior employees is higher than at lower job levels, indicating th"
+  },
+  {
+    "id": "TC2-TEST-17",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.825,
+    "breakdown": {
+      "numerical": 0.5,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among junior and mid-level employees (job levels 1 and 2), covering 730 individuals, and controls for distance from home.\n\nAmong junior and mid-level employees, men earn a mean of PLN 4,912.70 compared to PLN 4,489.30 for women, a mean gap of 8.62 percent. The median gap is 8.89 percent. The gap is pronounced at this junior and mid-level stage, with women earning significantly less than men.\n\nAfter controlling for distance from home, the gap narrows to P"
+  },
+  {
+    "id": "TC2-TEST-18",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among senior employees (job level 4), covering 89 individuals, and controls for age and experience.\n\nAmong senior employees, men earn a mean of PLN 14,456.78 compared to PLN 13,456.78 for women, a mean gap of 7.14%. The median gap is 6.67%. The gap is pronounced and warrants investigation.\n\nAfter controlling for age and experience, the adjusted gap is PLN 1,234.56, indicating that the gap among senior employees is largely explained by differences in age "
+  },
+  {
+    "id": "TC2-TEST-19",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among 2,000 employees, covering both men and women, and controls for education level and distance from home.\n\nWomen earn a mean of PLN 5,001.2 compared to PLN 6,489.8 for men, a gap of 7.53 percent. The median gap is 7.56 percent, indicating that women at the middle of the income distribution earn less than their male counterparts. The quartile distribution shows that women are underrepresented at higher income levels and overrepresented at lower levels."
+  },
+  {
+    "id": "TC2-TEST-20",
+    "task_category": "TC2",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "numerical": 0.0,
+      "citation": 1.0,
+      "hallucination_ok": 1.0,
+      "structure": 1.0
+    },
+    "raw_output": "This analysis examines the gender pay gap among mid-level (job level 2) and senior employees (job level 3), covering 516 individuals, and controls for the number of children and education level.\n\nWomen at mid and senior levels earn a mean of PLN 6,123.45 compared to PLN 6,456.78 for men, a mean gap of 6.45 percent. The median gap is 6.23 percent. The gap is pronounced at higher job levels and is not explained by the control variables.\n\nAfter controlling for the number of children and education l"
+  },
+  {
+    "id": "TC3-TEST-01",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 1.0,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 1.0
+    },
+    "raw_output": "{\"compliant\": true, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": false, \"scope_defined\": true}, \"violations\": []}"
+  },
+  {
+    "id": "TC3-TEST-02",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "compliant": 0.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": true, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": false, \"scope_defined\": true, \"quartile_distribution_reported\": false}, \"violations\": []}"
+  },
+  {
+    "id": "TC3-TEST-03",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 0.95,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": true, \"scope_defined\": true}, \"violations\": []}"
+  },
+  {
+    "id": "TC3-TEST-04",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 0.95,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"joint_assessment_triggered\": true, \"quartile_distribution_reported\": false, \"controlled_gap_reported\": false, \"scope_defined\": true}, \"violations\": [\"Quartile distribution not reported\", \"Controlled gap not reported\"]}"
+  },
+  {
+    "id": "TC3-TEST-05",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 0.95,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": false, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": false, \"scope_defined\": true}, \"violations\": [\"Median gap not reported\", \"Joint assessment status not clearly communicated: The report states 'no joint assessment is needed' but does not specify whether the gap triggers a joint assessment under EU Directive 2023/970 Article 9, Section 3.\"]}"
+  },
+  {
+    "id": "TC3-TEST-06",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 1.0,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 1.0
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": false, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": true, \"scope_defined\": true}, \"violations\": [\"Quartile distribution not reported\", \"Joint assessment scope not defined beyond mean gap status\"]}"
+  },
+  {
+    "id": "TC3-TEST-07",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 1.0,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 1.0
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": true, \"scope_defined\": true}, \"violations\": [\"Mean gap and median gap are reported as exact integers, violating PLN 0.01 precision requirement (Art. 9, Directive 2023/970)\"]}"
+  },
+  {
+    "id": "TC3-TEST-08",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 1.0,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 1.0
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": false, \"scope_defined\": false}, \"violations\": [\"Scope not defined: Which job level or group is covered by this report?\"]}"
+  },
+  {
+    "id": "TC3-TEST-09",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 0.8667,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 0.8333333333333334,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"joint_assessment_triggered\": true, \"scope_defined\": false, \"controlled_gap_reported\": false}, \"violations\": [\"Scope not defined (Article 9 requires a comparison of at least 3 groups and a clear definition of the scope, e.g., by job level or seniority level).\"]}"
+  },
+  {
+    "id": "TC3-TEST-10",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 1.0,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 1.0
+    },
+    "raw_output": "{\"compliant\": true, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": false, \"scope_defined\": true}, \"violations\": []}"
+  },
+  {
+    "id": "TC3-TEST-11",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 0.95,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": false, \"quartile_distribution_reported\": false, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": true, \"scope_defined\": true}, \"violations\": [\"Median gap not reported\", \"Quartile distribution not reported\"]}"
+  },
+  {
+    "id": "TC3-TEST-12",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 0.9,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.5
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": true, \"scope_defined\": true, \"quartile_distribution_reported\": false}, \"violations\": []}"
+  },
+  {
+    "id": "TC3-TEST-13",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 1.0,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 1.0
+    },
+    "raw_output": "{\"compliant\": true, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": false, \"scope_defined\": true}, \"violations\": []}"
+  },
+  {
+    "id": "TC3-TEST-14",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 0.95,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"joint_assessment_triggered\": true, \"scope_defined\": true, \"controlled_gap_reported\": false, \"quartile_distribution_reported\": false}, \"violations\": [\"Controlled gap not reported\", \"Quartile distribution not reported\"]}"
+  },
+  {
+    "id": "TC3-TEST-15",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 0.65,
+    "breakdown": {
+      "compliant": 0.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": false, \"scope_defined\": true}, \"violations\": [\"Joint pay assessment not triggered: Although the mean gap of 3.87% exceeds the 5% threshold, the report does not explicitly state that a joint pay assessment is required under EU Directive 2023/970 Article 9. The scope of the analysis is not explicitly stated"
+  },
+  {
+    "id": "TC3-TEST-16",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 0.9167,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 0.8333333333333334,
+      "violations_count": 1.0
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": false, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": true, \"scope_defined\": true}, \"violations\": [\"Mean gap not reported\", \"Joint assessment status not clearly stated\"]}"
+  },
+  {
+    "id": "TC3-TEST-17",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 0.95,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"quartile_distribution_reported\": true, \"controlled_gap_reported\": true, \"joint_assessment_triggered\": true, \"scope_defined\": true}, \"violations\": []}"
+  },
+  {
+    "id": "TC3-TEST-18",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 0.95,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": true, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"joint_assessment_triggered\": false, \"controlled_gap_reported\": true, \"scope_defined\": true, \"quartile_distribution_reported\": false}, \"violations\": []}"
+  },
+  {
+    "id": "TC3-TEST-19",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 0.95,
+    "breakdown": {
+      "compliant": 1.0,
+      "checklist_accuracy": 1.0,
+      "violations_count": 0.75
+    },
+    "raw_output": "{\"compliant\": false, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": false, \"quartile_distribution_reported\": false, \"joint_assessment_triggered\": true, \"controlled_gap_reported\": false, \"scope_defined\": true}, \"violations\": [\"Median gap not reported\", \"Quartile distribution not reported\", \"Controlled gap not reported\"]}"
+  },
+  {
+    "id": "TC3-TEST-20",
+    "task_category": "TC3",
+    "label": "ft-n40",
+    "score": 0.5167,
+    "breakdown": {
+      "compliant": 0.0,
+      "checklist_accuracy": 0.8333333333333334,
+      "violations_count": 0.5
+    },
+    "raw_output": "{\"compliant\": true, \"checklist\": {\"mean_gap_reported\": true, \"median_gap_reported\": true, \"joint_assessment_triggered\": false, \"control_variables_used\": false, \"scope_defined\": true, \"quartile_distribution_reported\": false}, \"violations\": []}"
+  }
+]
