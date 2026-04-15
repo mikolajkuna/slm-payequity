@@ -23,10 +23,10 @@ import faiss
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
 
-BASE_MODEL       = "microsoft/Phi-3.5-mini-instruct"
-TRAIN_DATA_PATH  = "training_data.jsonl"
-TEST_DATA_PATH   = "test_data.jsonl"
-OUTPUT_DIR       = "./eval_results/rag/phi-3.5-mini"
+TRAIN_DATA_PATH  = "data/raw/train.jsonl"
+TEST_DATA_PATH   = "data/raw/test.jsonl"
+BASE_MODEL       = "unsloth/Meta-Llama-3.1-8B-Instruct"  # change per model
+OUTPUT_DIR       = "./eval_results/rag/<model_short_name>"  # change per model
 EMBED_MODEL      = "sentence-transformers/all-MiniLM-L6-v2"
 TOP_K            = 3       # number of examples to retrieve per query
 MAX_NEW_TOKENS   = 1024
