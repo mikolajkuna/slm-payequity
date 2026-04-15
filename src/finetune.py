@@ -2,16 +2,10 @@
 Fine-tuning script using HuggingFace PEFT + TRL
 QLoRA for RTX 5060 8GB on Windows
 
-Changes vs original:
-  - argparse for --data_path and --output_dir
-  - save_strategy="no" (no mid-training checkpoints — prevents RAM crash)
-  - save() saves only LoRA adapter weights (~100MB), not full model
-  - PYTHONUTF8 forced at startup
-
 Usage:
     $env:PYTHONUTF8="1"
-    venv313\Scripts\python.exe "finetune_peft (Llama).py"
-    venv313\Scripts\python.exe "finetune_peft (Llama).py" --data_path=train_n20.jsonl --output_dir=./output_peft/llama-ablation-n20
+    venv313\Scripts\python.exe src\finetune.py
+    venv313\Scripts\python.exe src\finetune.py --data_path=data/raw/train_n20.jsonl --output_dir=./output_peft/llama-ablation-n20
 """
 
 import os
@@ -32,7 +26,7 @@ from trl import SFTTrainer, SFTConfig
 # ── ARGS ──────────────────────────────────────────────────────────────────────
 
 _p = argparse.ArgumentParser()
-_p.add_argument("--data_path",  default="training_data.jsonl")
+_p.add_argument("--data_path",  default="data/raw/train.jsonl")
 _p.add_argument("--output_dir", default="./output_peft/llama3.1-8b")
 _args, _ = _p.parse_known_args()
 
@@ -183,7 +177,7 @@ def train(model, tokenizer, dataset):
     trainer.train()
     return trainer
 
-# ── SAVE — only LoRA adapter (~100 MB) ───────────────────────────────────────
+# ── SAVE — only LoRA adapter ──────────────────────────────────────────────────
 
 def save(model, tokenizer, trainer):
     lora_path = os.path.join(OUTPUT_DIR, "lora_adapter")
